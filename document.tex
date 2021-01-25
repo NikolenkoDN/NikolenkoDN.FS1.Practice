@@ -1,0 +1,369 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[ utf8 ]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[russian]{babel} 
+\usepackage[T2A]{fontenc} 
+\usepackage{amsmath,amssymb}
+\usepackage{pbox}
+\usepackage{indentfirst}
+\usepackage{misccorr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\pagestyle{empty} % нумерация выкл.
+\usepackage[x11names]{xcolor}
+\definecolor {brightmaroon} {rgb} {0,76, 0,13, 0,28}
+\definecolor {royalazure} {rgb} {0,0, 0,22, 0,66}
+\usepackage[colorlinks = true, linkcolor = royalazure]{ hyperref }
+\usepackage{ tikz, tkz-fct, pgfplots }
+\usepackage[a4paper, total={170 mm, 257 mm},left=20mm, top=20mm ]{ geometry }
+% ----------------- Команды -----------------
+\newcommand {\eps } { \varepsilon }
+\newcommand \tline[2]{ $ \underset { \text {# 1}} { \text { \underline { \hspace {# 2}}}} $ }
+
+% ----------------- Установить путь к графике -----------------
+\graphicspath{{img/}}
+
+\begin{document}
+	\pagestyle {пусто}
+	\centerline { \large Министерство науки и высшего образования}	
+	\centerline { \large Федеральное государственное бюджетное образовательное}
+	\centerline { \large учреждение высшего образования}
+	\centerline { \large  `` Московский государственный технический университет}
+	\centerline { \large имени Н.Э. Баумана}
+	\centerline { \large (национальный исследовательский университет) ''}
+	\centerline { \large (МГТУ им. Н.Э. Баумана)}
+	\hrule
+	
+	\vspace{0.5 cm}
+	
+	\begin{figure}[h]
+		\center
+		\includegraphics[height=0.35\linewidth]{bmstu-logo-small}
+	\end{figure} 
+	
+	\begin{center}
+		\large
+		\begin{tabular} {c}
+			Факультет ``Фундаментальные науки'' \\
+			Кафедра ``Высшая математика''		
+			\end {tabular}
+		\end{center}
+		
+		\vspace{0.5 cm}
+		
+		\begin{center}
+			\LARGE \bf	
+			\begin{tabular} {c}
+				\textc{Отчёт} \\
+				по учебной практике \\
+				за 3 семестр 2020 --- 2021 гг.
+				\end {tabular}
+			\end{center}
+			
+			\vspace{0,5}
+			
+			\begin{center}
+				\large
+				\begin{tabular}{p{5.3cm} 11}
+					\pbox{5.45cm} {
+						Руководитель практики, \\
+						ст. преп. кафедры ФН1} & $\underset{\text{(подпись)}}{\underline{\hspace{5cm\textwidth}}}$ & Кравченко О.В. \\ [0.5cm]
+					студент группы ФН1--31 & $\underset{\text{(подпись)}}{\underline{\hspace{5cm\textwidth}}}$ & Николенко Д.Н.
+				\end{tabular}
+			\end{center} 
+			
+			\vfill
+			
+			\begin{center}
+				\large
+				\begin{tabular} {c}
+					Москва, \\
+					2020 г.
+				\end{tabular}
+			\end{center}
+			
+			
+			\newpage	
+			\tableofcontents
+			
+			\newpage
+			\section{Цели и задачи практики}	
+			\subsection{Цели}
+			--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+			
+			\subsection{Задачи}
+			\begin{enumerate}
+				\item Знакомство с теорией рядов Фурье, и теорией интегральный уравнений.
+				\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+				\item Развитие навыков составления отчётов и презентации результатов.
+			\end{enumerate}
+			
+			\subsection{Индивидуальное задание}	
+			\begin{enumerate}
+				\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+				\item Изучить возможности  системы контроля версий \textsf{Git}.
+				\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+				Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+				\item Оформить в системе \LaTeX типовые расчёты по курсу математического анализа согласно своему варианту.
+				\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+				и результат компиляции в формате \textsf{pdf}.
+				\item Решить индивидуальное домашнее задание согласно своему варианту, и оформить решение с учётов пп. 1---4.
+			\end{enumerate} 
+			
+			\newpage
+			\section{Отчёт}
+			Интегральные уравнения имеют большое прикладное значение, являясь мощным
+			орудием исследования многих задач естествознания и техники: они широко используются
+			в механике, астрономии, физике, во многих задачах химии и биологии. Теория линейных
+			интегральных уравнений представляет собой важный раздел современной математики,
+			имеющий широкие приложения в теории дифференциальных уравнений, математической
+			физике, в задачах естествознания и техники. Отсюда владение методами теории
+			дифференциальных и интегральных уравнений необходимо приклажному математику, при решении задач
+			механики и физики.
+			
+			\newpage
+			\section{Индивидуальное задание}
+			\subsection{Ряды Фурье и интегральное уравнение Вольтерры.}
+			
+			\subsubsection*{\center Задача № 1.}
+			{\bf Условие.~}
+			Разложить в ряд Фурье заданную функцию $f(x)$, построить графики $f(x)$ и суммы ее ряда Фурье. Если не указывается, какой вид разложения в ряд необходимо представить, то требуется разложить функцию либо в общий тригонометрический ряд Фурье, либо следует выбрать оптимальный вид разложения в зависимости от данной функции.
+			% ---------------------------- Problem 1----------------------------------
+			\[
+			\begin{equation}
+				f(x) = ch(ax), 	& -\pi \leqslant x \leqslant \pi
+			\end{equation}
+			\]
+			{\bf Решение.~}	
+			%График
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[xmin=-4,	xmax=4, 	ymin=-1,	ymax=3,
+						width=0.5\textwidth,
+						height=0.4\textwidth,
+						axis x line=middle,
+						axis y line=middle, 
+						every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+						every inner x axis line/.append style={|-latex'},
+						every inner y axis line/.append style={|-latex'},
+						minor tick num=1,			
+						axis equal=true,
+						xlabel=$x$, 
+						ylabel=$y$,          
+						samples=100,
+						clip=true,
+						]
+						\addplot[color=black, line width=1.5pt,domain=-3.14:3.14]{cosh(x)};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\noindent
+			Построим тригонометрический ряд Фурье вида
+			$$
+			f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty 
+			\left( a_n\cos{(nx)}\right).
+			$$
+			\noindent
+			Вычислим коэффициенты
+			$$
+			\begin{array}{rcl}
+				a_0 &=& \displaystyle\frac{2}{\pi}\left
+				\left( 
+				\int\limits_0^\pi
+				ch(ax)\,dx \right)
+				= \frac{2sh(a\pi)}{a\pi},												\\[12pt]
+				a_n &=& \displaystyle\frac{2}{\pi}\left(
+				\int\limits_0^\pi
+				\ch(ax) \cdot cos(nx)\,dx \right) ={}									\\[12pt]
+				&=& \displaystyle\frac{2}{\pi}\left(
+				\frac{e^{-a\pi}((e^{2a\pi} + 1)n sin(n\pi) + (ae^{2a\pi} -a)cos(n\pi))}{2(n^2 + a^2)}\right) = 	\\[12pt]
+				&=& \displaystyle\frac{e^{-a\pi}(ae^{2a\pi} -a)cos(n\pi)}{2(n^2 + a^2)} = \displaystyle\frac{e^{-a\pi}(ae^{2a\pi} -a)(-1)^n}{2(n^2 + a^2)} .	\\[12pt]
+			\end{array}
+			$$
+			Применив теорему Дирихле о поточечной сходимости ряда Фурье, видим, что построенный ряд Фурье сходится 
+			к периодическому (с периодом $T=2\pi$) продолжению исходной функции. Рисунок соответствует случаю, когда $a>0$. При этом значения функции на концах промежутка $[-\pi, \pi]$ совпадают: $f(-\pi+0) = \displaystyle\frac{e^{-a\pi}+e^{a\pi}}{2}$, $f(\pi+0) = \displaystyle\frac{e^{a\pi}+e^{-a\pi}}{2}$. $S(-\pi)=S(\pi)=\displaystyle\frac{1+e^{2a\pi}}{2e^{a\pi}}$.
+			График функции $S(x)$ имеет следующий вид
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[xmin=-11, xmax=11, ymin=-1, ymax=12.6,
+						width=0.8\textwidth,
+						height=0.4\textwidth,
+						axis x line=middle,
+						axis y line=middle, 
+						every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+						every inner x axis line/.append style={|-latex'},
+						every inner y axis line/.append style={|-latex'},
+						minor tick num=1,			
+						axis equal=true,
+						xlabel=$x$, 
+						ylabel=$S(x)$,          
+						samples=100,
+						clip=true,
+						]
+						\addplot[color=black, line width=1.5pt,domain=-9.42:-3.14]{cosh(x+6.28)};
+						\addplot[color=black, line width=1.5pt,domain=-3.14:3.14]{cosh(x)};
+						\addplot[color=black, line width=1.5pt,domain=3.14:9.42]{cosh(x-6.28)};
+						\addplot[color=black, line width=1.5pt,domain=-15.7:-9.42] {cosh(x+12.56)};
+						\addplot[color=black, line width=1.5pt,domain=9.42:15.7]{cosh(x-12.56)};
+						\addplot[thick,dashed] coordinates {(-3.14, 0) (-3.14, 11.592)};
+						\addplot[thick,dashed] coordinates {(3.14, 0) (3.14, 11.592)};
+						\addplot[thick,dashed] coordinates {(9.42, 0) (9.42, 11.592)};
+						\addplot[thick,dashed] coordinates {(-9.42, 0) (-9.424, 11.592)};
+						\addplot[
+						mark=*,
+						mark options={fill=black, draw=black},
+						only marks,
+						] coordinates {(-9.42, 11.592) (-3.14, 11.592) (3.14, 11.592) (9.42, 11.592)};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\noindent
+			\textbf{Ответ:}
+			\[
+			\begin{split}
+				&f(x)=\frac{2sh(a\pi)}{a\pi}+\sum_{n=1}^\infty\left[\displaystyle\frac{(e^{-a\pi}(ae^{2a\pi} -a)(-1)^n}{2(n^2 + a^2)}cos(nx)\right]; \\
+				&S(n)=\frac{1+e^{2a\pi}}{2e^{a\pi}}, \text{ при } n\in\mathbb{Z}.
+			\end{split}
+			\]
+			
+			% ---------------------------- Problem 2----------------------------------
+			\subsubsection*{\center Задача № 2.}
+			{\bf Условие.~}
+			Для заданной графически функции $y(x)$ построить ряд Фурье в комплексной форме, изобразить график суммы построенного ряда
+			
+			%График
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[xmin=-1,	xmax=5, 	ymin=-1,	ymax=3,
+						width=0.5\textwidth,
+						height=0.4\textwidth,
+						axis x line=middle,
+						axis y line=middle, 
+						every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+						every inner x axis line/.append style={|-latex'},
+						every inner y axis line/.append style={|-latex'},
+						minor tick num=1,			
+						axis equal=true,
+						xlabel=$x$, 
+						ylabel=$y$,          
+						samples=100,
+						clip=true,
+						]
+						\addplot[color=black, line width=1.5pt,domain=0:2] {-\x+2};
+						\addplot[color=black, line width=1.5pt,domain=2:4]{0};
+						%	\addplot[thick,dashed] coordinates {(2,0) (2,-1)};
+						\addplot[
+						mark=*,
+						mark options={fill=black, draw=black},
+						only marks,
+						] coordinates {(2, 0)};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			
+			\noindent
+			\textbf{Решение.}\\
+			
+			\noindent
+			Ряд Фурье в комплексной форме имеет следующий вид
+			\[
+			f(x) = \sum_{n=-\infty}^\infty c_n e^{i\omega nx},\quad c_n=\frac{1}{T}\int\limits_a^b f(x) e^{-i\omega nx}dx,\,\omega=\frac{2\pi}{T}.
+			\]
+			В нашем примере $ a=0,b=4,T=4,\omega=\pi/2$, 
+			найдем коэффицинеты $c_n,\,n=0,\pm1,\pm2,\ldots$
+			где $\omega=2\pi/T,\,T=4.$
+			$$
+			\begin{array}{rcl}
+				c_0 &=&\displaystyle\frac{1}{4} \int\limits_0^4 f(x)dx=\frac{1}{4}\left(\int\limits_0^2 (-x+2)dx\right)=-\frac{1}{2},\\[12pt]
+				c_n &=&\displaystyle\frac{1}{4}\left(
+				\int\limits_0^2
+				(-x+2)e^{-i\frac{\pi}{2}nx}dx\right) ={}\\[12pt]
+				&=&\displaystyle\frac{isin(n\pi)-cos(n\pi)-in\pi +1}{\pi^2n^2} = \\[12pt]
+				&=&\displaystyle\frac{1-cos(n\pi)-in\pi}{\pi^2 n^2} = \frac{1-(-1)^n -in\pi}{\pi^2 n^2}.
+			\end{array}
+			$$
+			\noindent
+			Применив теорему Дирихле о поточечной сходимости ряда Фурье, видим, что построенный ряд Фурье сходится 
+			к периодическому (с периодом $T=4$) продолжению исходной функции. График функции $S(x)$ имеет вид
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[xmin=-8, xmax=8, ymin=-1, ymax=3,
+						width=0.8\textwidth,
+						height=0.4\textwidth,
+						axis x line=middle,
+						axis y line=middle, 
+						every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+						every inner x axis line/.append style={|-latex'},
+						every inner y axis line/.append style={|-latex'},
+						minor tick num=1,			
+						axis equal=true,
+						xlabel=$x$, 
+						ylabel=$S(x)$,          
+						samples=100,
+						clip=true,
+						]
+						\addplot[color=black, line width=1.5pt,domain=-8:-6] {-\x-6};
+						\addplot[color=black, line width=1.5pt,domain=-6:-4]{0};
+						\addplot[color=black, line width=1.5pt,domain=-4:-2] {-\x-2};
+						\addplot[color=black, line width=1.5pt,domain=-2:0]{0};
+						\addplot[color=black, line width=1.5pt,domain=0:2] {-\x+2};
+						\addplot[color=black, line width=1.5pt,domain=2:4]{0};
+						\addplot[color=black, line width=1.5pt,domain=4:6] {-\x+6};
+						\addplot[color=black, line width=1.5pt,domain=6:8]{0};
+						\addplot[
+						mark=*,
+						mark options={fill=black, draw=black},
+						only marks,
+						] coordinates {(-8, 1) (-4, 1) (0, 1) (4, 1) (8, 1)};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			
+			\noindent
+			\textbf{Ответ:}
+			\[
+			\begin{split}
+				&f(x)=\sum_{n=-\infty}^\infty\left[ \frac{1-(-1)^n -in\pi}{\pi^2 n^2}\right] e^{\tfrac{i\pi nx}{2}},~ x\ne 2n; \\
+				&S(2n)=1,\quad\text{при}~n\in\mathbb{Z}.
+			\end{split}
+			\]
+			
+			% ---------------------------- Problem 3----------------------------------
+			\subsubsection*{\center Задача № 3.}
+			{\bf Условие.~}\\
+			Найти резольвенту для интегрального уравнения Вольтерры со следующим ядром 
+			$$K(x,t)=(t-x)e^{x^4-t^4}.$$
+			
+			\noindent
+			{\bf Решение.~}\\
+			\noindent
+			Запишем интегральное уравнение Вольтерры
+			$$
+			y(x)= f(x) +\int\limits_0^x (t-x)e^{x^4-t^4} y(t)dt.
+			$$
+			Из рекурентных соотношений получаем
+			$$
+			\begin{array}{rcl}
+				K_1(x,t)&=&\displaystyle (t-x)e^{x^4-t^4}, \\[12pt]
+				K_2(x,t)&=&\displaystyle\int\limits_t^x K(x,s)K_1(s,t)ds = \int\limits_t^x (s-x)e^{x^4-s^4} (t-s)e^{s^4-t^4} ds = 
+				\displaystyle-\frac{(t-x)^3}{6}\cdot e^{x^4-t^4},\\[12pt]
+				K_3(x,t)&=&\displaystyle\int\limits_t^x K(x,s)K_2(s,t)ds = -\int\limits_t^x (s-x)e^{x^4-s^4} \cdot \frac{(t-s)^3}{6} e^{s^4-t^4} ds = \frac{(t-x)^5\cdot e^{x^4-t^4}}{120}.\\[12pt]
+				K_j(x,t)&=&\displaystyle\frac{(-1)^{j-1}\cdot e^{x^4-t^4}\cdot (t-x)^{2j-1}}{(2j-1)!}\!\!\!\!\!\!\!\!\!\!\!\!\! \quad \quad \quad, \quad j=\mathbb{N}.
+			\end{array}
+			$$
+			Подставляя это выражение для итерированных ядер, найдем резольвенту
+			$$ 
+			R(x,t,\lambda)=-e^{x^4-t^4}\cdot \sum_{j=1}^\infty \frac{(-1)^{j-1}\cdot(t-x)^{2j-1}}{(2j-1)!}\!\!\!\!\!\!\!\!\!\!
+			\quad\quad,\quad j=1,2,\ldots, \lambda = 1, 
+			$$
+			
+			
+			\newpage
+			\addcontentsline{toc}{section}{ Список литературы ~}
+			\begin{thebibliography}{99}
+				\bibitem{book01} Львовский С.М. Набор и вёрстка в системе \LaTeX,\,2003.
+				\bibitem{book02} Краснов М.Л., Киселев А.И., Макаренко Г.И. Интегральные уравнения. М.:~Наука,\,1976.
+				\bibitem{book03} Васильева А. Б., Тихонов Н. А. Интегральные уравнения. --- 2-е изд., стереотип. --- М:~ФИЗМАТЛИТ,\,2002.
+			\end{thebibliography}
+			
+		\end{document}
